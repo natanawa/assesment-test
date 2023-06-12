@@ -1,0 +1,18 @@
+public static void Main()
+{
+	 // Jumlah anting per jenis
+    int jumlahRuby = 5;
+    int jumlahTopaz = 3;
+    int jumlahPermata = 1;
+
+    // Harga per pasang anting
+    int hargaRuby = 1000000;
+    int hargaTopaz = 1250000;
+    int hargaPermata = 3000000;
+
+    // Menghitung total pendapatan maksimum
+    int totalPendapatan = (jumlahRuby / 2) * hargaRuby + (jumlahTopaz / 2) * hargaTopaz + (jumlahPermata / 2) * hargaPermata;
+
+    Console.WriteLine("Potensi pendapatan maksimum: Rp " + totalPendapatan);
+
+}

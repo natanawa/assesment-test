@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+					
+public class Program
+{
+	
+	public static void Main()
+	{
+		string inputString = "USOMAANAPAIUMASYDNIP";
+		string targetWord  = "SIAPA";
+		
+		int JumlahKata = CountWords(targetWord, inputString);
+		Console.WriteLine("Jumlah kata yang dapat dihasilkan : " + JumlahKata);
+	}
+	
+	public static int CountWords(string targetWord, string inputString)
+	{
+		List<int> results = new List<int>();
+		int final = Int32.MaxValue;
+		char[] charArray = targetWord.ToCharArray();
+		
+		for (int i = 0; i < charArray.Length; i++)
+		{		
+			int count = 0;		
+			foreach (char c in inputString) 
+		  	if (c == charArray[i]) count++;				
+			results.Add(count);
+		}
+		
+		for(int j = 0; j < results.Count; j++)
+		{				
+			if(results.Count == 1){
+				final = results[j];
+			}else if(results.Count < 1){
+				final = 0;
+			}else if(results.Count > 1){
+				if(results[j] < final ){
+					final = results[j];
+				}
+			}
+		}		
+		
+		return final;
+	}
+}

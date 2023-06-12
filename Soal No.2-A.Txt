@@ -1,0 +1,8 @@
+SELECT
+	mhs.* 
+FROM
+	kehadiran hdr
+	LEFT JOIN mahasiswa mhs ON hdr.NIM = mhs.NIM 
+WHERE
+	hdr.Tanggal BETWEEN "2020-06-15" 
+	AND "2020-06-17"
